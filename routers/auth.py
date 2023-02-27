@@ -1,7 +1,6 @@
 import sys
 
-sys.path.append(
-    "..")  # since auth.py is now in router dir so database.py and models.py won't be accessible so this will
+sys.path.append("..")  # since auth.py is now in router dir so database.py and models.py won't be accessible so this will
 # so this will allow the parent dir of auth.py ie(router folder) to include all ohter dependency
 
 from fastapi import FastAPI, Depends, HTTPException, APIRouter, Request, Response, Form
@@ -78,8 +77,8 @@ def register(request: Request):
 
 
 @router.post("/register", response_class=HTMLResponse)
-async def register_user(request: Request, email: str = Form(), username: str = Form(), firstname: str = Form(),
-                        lastname: str = Form(), password: str = Form(), password2: str = Form(),
+async def register_user(request: Request, email: str = Form(...), username: str = Form(...), firstname: str = Form(...),
+                        lastname: str = Form(...), password: str = Form(...), password2: str = Form(...),
                         db: Session = Depends(get_db)
                         ):
     validation1 = db.query(models.Users).filter(models.Users.username == username).first()
