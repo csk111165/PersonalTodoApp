@@ -3,10 +3,10 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 
 # This is for sqlite
-# SQLALCHEMY_DATABASE_URL = "sqlite:///./todos.db"
+SQLALCHEMY_DATABASE_URL = "postgresql://zkzvgcoo:uiQGVv2vLm0dZEJUBETqG9gKcOnEerzi@suleiman.db.elephantsql.com/zkzvgcoo"
 # -----
 
-SQLALCHEMY_DATABASE_URL = "postgresql://postgres:1234@localhost/TodoApplicationDatabase"
+# SQLALCHEMY_DATABASE_URL = "postgresql://postgres:1234@localhost/TodoApplicationDatabase"
 
 # This is for sqlite
 # engine = create_engine(
